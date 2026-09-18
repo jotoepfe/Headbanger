@@ -2,120 +2,40 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Headbangers Rock'n Roll</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08070a">
+<title>Headbangers Rock 'n' Roll MusicBox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Metal+Mania&family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--red:#ef2b2d;--orange:#ff8c20;--yellow:#ffe34f;--cyan:#1de2e8;--pink:#ff4eaa;--green:#43e69b;--cream:#fff3d4}
-*{box-sizing:border-box} html,body{min-height:100%}
-body{margin:0;padding:24px;display:flex;justify-content:center;background:radial-gradient(circle at 50% 25%,#313131,#090909 62%,#000);color:var(--cream);font-family:"Trebuchet MS",Arial,sans-serif}
-.page{width:min(570px,96vw)}
-.jukebox{position:relative;width:100%;padding:25px;border:4px solid #292d30;border-radius:255px 255px 38px 38px/205px 205px 38px 38px;background:linear-gradient(90deg,transparent 4%,#fafafa 8%,transparent 13% 87%,#eee 92%,transparent 96%),linear-gradient(#f8fbff,#777f86 10%,#e7ecef 16%,#596066 24%,#bbc2c7 35%,#444b50);box-shadow:0 0 0 4px #d6dade,0 0 0 8px #353a3e,0 25px 65px #000,0 0 55px #ef2b2d55}
-.jukebox:before,.jukebox:after{content:"";position:absolute;z-index:4;top:120px;bottom:70px;width:14px;border-radius:10px;background:linear-gradient(var(--red),var(--orange),var(--yellow),var(--cyan),var(--pink),var(--red));background-size:100% 300%;animation:tube 3s linear infinite;box-shadow:0 0 7px white,0 0 18px var(--pink)}
-.jukebox:before{left:12px}.jukebox:after{right:12px;animation-direction:reverse}
-.inner{position:relative;overflow:hidden;min-height:690px;padding:34px 45px 28px;border:6px solid #7c0909;border-radius:225px 225px 22px 22px/180px 180px 22px 22px;background:radial-gradient(ellipse at 50% 15%,#ffd23f22,transparent 28%),linear-gradient(#21100b,#080807 39%,#15110f);box-shadow:inset 0 0 55px #000,0 0 0 5px #f0f3f5,0 0 26px #ff2929aa}
-.neon{position:absolute;pointer-events:none;inset:15px;border:8px solid var(--red);border-bottom-color:var(--orange);border-radius:205px 205px 16px 16px/165px 165px 16px 16px;box-shadow:0 0 5px white,0 0 14px var(--red),0 0 30px var(--red),inset 0 0 14px var(--red);animation:pulse 2s ease-in-out infinite alternate}
-.content{position:relative;z-index:2}.record-area{height:170px;display:grid;place-items:center;position:relative}.record{position:relative;width:148px;height:148px;border-radius:50%;background:repeating-radial-gradient(circle,transparent 0 4px,#ffffff16 5px,transparent 6px 9px),conic-gradient(#050505,#373737,#050505,#222,#050505);border:3px solid #171717;box-shadow:0 0 0 4px #777,0 8px 20px #000}.record.spin{animation:spin 1.45s linear infinite}.label{position:absolute;inset:48px;display:grid;place-items:center;border-radius:50%;color:#171717;background:radial-gradient(circle,#171717 0 5px,var(--yellow) 6px);font-size:10px;font-weight:900;text-align:center;line-height:1}
-.arm{position:absolute;top:36px;left:calc(50% + 44px);width:90px;height:12px;transform:rotate(43deg);transform-origin:left;border-radius:9px;background:linear-gradient(#fff,#676c70 55%,#222);box-shadow:0 2px 4px #000}.arm:before{content:"";position:absolute;left:-10px;top:-7px;width:25px;height:25px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#777 55%,#222)}.arm:after{content:"";position:absolute;right:-6px;top:-4px;width:20px;height:20px;border-radius:3px 8px 8px 3px;background:var(--red)}
-h1{margin:2px 0 10px;text-align:center;text-transform:uppercase;font-family:Impact,"Arial Narrow Bold",sans-serif;font-size:clamp(30px,7vw,46px);line-height:.95;letter-spacing:2px;color:var(--yellow);text-shadow:0 0 3px white,0 0 9px var(--orange),0 0 21px var(--red),3px 4px #6e0808,6px 7px #050505}.headbanger{text-align:center;margin:0 0 15px;color:var(--cyan);font-weight:bold;letter-spacing:3px;text-transform:uppercase;text-shadow:0 0 7px var(--cyan),0 0 17px var(--cyan)}
-.display{height:72px;display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:10px;border:4px solid #e8edf0;border-radius:12px;background:#020505;box-shadow:inset 0 0 20px #000,0 0 17px #20e7e766}.slot{width:44px;height:51px;display:grid;place-items:center;border:1px solid var(--cyan);border-radius:5px;background:#000;color:var(--cyan);font:700 34px "Courier New";text-shadow:0 0 8px var(--cyan),0 0 18px var(--cyan)}.display.success .slot{color:var(--green);border-color:var(--green);text-shadow:0 0 10px var(--green)}.display.error{animation:shake .38s}.display.error .slot{color:var(--red);border-color:var(--red)}
-.message{min-height:40px;display:grid;place-items:center;text-align:center;font-size:14px;letter-spacing:1px}.keypad{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.key{aspect-ratio:1;border:2px solid #ffffffaa;border-radius:50%;color:#151515;font:900 20px inherit;cursor:pointer;box-shadow:0 5px 0 #0009,0 7px 12px #000,inset 0 3px 4px #ffffffbb}.key:nth-child(5n+1){background:radial-gradient(circle at 35% 28%,#ffad91,var(--red) 66%)}.key:nth-child(5n+2){background:radial-gradient(circle at 35% 28%,#ffd09b,var(--orange) 66%)}.key:nth-child(5n+3){background:radial-gradient(circle at 35% 28%,#fff3ad,var(--yellow) 66%)}.key:nth-child(5n+4){background:radial-gradient(circle at 35% 28%,#b0ffff,var(--cyan) 66%)}.key:nth-child(5n+5){background:radial-gradient(circle at 35% 28%,#ffb0d8,var(--pink) 66%)}.key:active{transform:translateY(4px);box-shadow:0 1px #000}
-.clear{width:100%;margin-top:16px;padding:12px;border:2px solid #dfe5e9;border-radius:9px;color:var(--cream);background:linear-gradient(#414141,#0c0c0c);font:800 14px inherit;letter-spacing:2px;cursor:pointer}.player-box{display:none;margin-top:16px;padding:12px;border:3px solid #dce2e6;border-radius:12px;background:#090909;box-shadow:0 0 18px #ff45ad66}.player-box.visible{display:block}audio{display:block;width:100%}
-.next-hint{display:none;margin-top:25px;padding:25px 28px;border:3px solid var(--cyan);border-radius:18px;background:linear-gradient(135deg,#ff45ad1f,#20e7e71c),#050505f5;box-shadow:0 0 8px #ffffff70,0 0 23px #20e7e788,0 0 40px #ff45ad44,inset 0 0 22px #000;opacity:0;transform:translateY(22px)}.next-hint.visible{display:block;animation:reveal 1.1s ease forwards}.next-hint h2{margin:0 0 18px;text-align:center;color:var(--yellow);font-size:clamp(21px,5vw,29px);text-shadow:0 0 6px var(--orange),0 0 15px var(--red)}.next-hint p{margin:9px 0;font-size:16px;line-height:1.5}.next-hint ul{margin:15px 0 18px;padding-left:26px}.next-hint li{margin:9px 0;line-height:1.4}.next-path{text-align:center;color:var(--cyan);text-shadow:0 0 7px var(--cyan)}
-.memory-note{
-  display:block;
-  margin-top:6px;
-  font-size:14px;
-  font-style:italic;
-  font-weight:300;
-  color:#ff4a4a;
-}
-
-.shield{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:22px;
-  height:24px;
-  margin-left:4px;
-  color:#fff;
-  font-style:normal;
-  font-weight:700;
-  font-size:13px;
-  background:linear-gradient(#c90000,#7a0000);
-  border:1px solid #ffd0d0;
-  clip-path:polygon(
-    50% 0%,
-    100% 18%,
-    100% 72%,
-    50% 100%,
-    0% 72%,
-    0% 18%
-  );
-  box-shadow:0 0 6px #ff4444;
-}
-  
-@keyframes spin{to{transform:rotate(360deg)}}@keyframes tube{to{background-position:0 100%}}@keyframes pulse{to{filter:brightness(1.3)}}@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}@keyframes reveal{to{opacity:1;transform:translateY(0)}}
-@media(max-width:520px){body{padding:12px}.jukebox{padding:17px}.inner{min-height:640px;padding:28px 31px 23px}.record-area{height:145px}.record{width:125px;height:125px}.label{inset:40px}.arm{top:30px;left:calc(50% + 37px);width:76px}.keypad{gap:7px}}
+:root{--black:#060608;--wood1:#210b08;--wood2:#6e2314;--chrome1:#f7eed3;--chrome2:#736b62;--gold:#d7aa59;--amber:#ffb323;--red:#bd1224;--red2:#5a0710;--cream:#f2e5cb;--cyan:#5ee7e1;--green:#77e69a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;padding:30px 14px 70px;overflow-x:hidden;color:var(--cream);font-family:"Roboto Slab",Georgia,serif;background:radial-gradient(circle at 50% 10%,rgba(118,9,21,.28),transparent 34%),linear-gradient(#050507,#0c090d 55%,#040406)}
+body:before{content:"";position:fixed;inset:0;z-index:-2;opacity:.11;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}.page{width:min(690px,100%);margin:auto}.cache-title{text-align:center;margin-bottom:24px}.cache-title small{display:block;color:#ad8040;letter-spacing:.22em;font:700 .7rem Cinzel,serif}.cache-title h1{margin:6px 0;color:#d9ae63;font:400 clamp(2.5rem,8vw,4.7rem)/.9 "Metal Mania",Cinzel,serif;text-shadow:0 2px #3a2109,0 0 10px #bd1224,0 0 28px rgba(189,18,36,.55)}
+/* Wurlitzer-inspired cabinet */
+.jukebox{position:relative;padding:18px 18px 24px;border-radius:48% 48% 42px 42px/27% 27% 42px 42px;background:linear-gradient(90deg,#150400,#7b2c19 4%,#d6aa5a 7%,#3e130c 11%,#8d341e 18%,#2b0b08 50%,#8d341e 82%,#3e130c 89%,#d6aa5a 93%,#7b2c19 96%,#150400);border:3px solid #b8863d;box-shadow:0 0 0 4px #21120c,0 0 0 6px #8c652f,0 26px 70px #000,0 0 34px rgba(189,18,36,.4)}
+.jukebox:before,.jukebox:after{content:"";position:absolute;top:85px;bottom:58px;width:18px;z-index:5;border:3px solid #efe0be;border-radius:50px;background:linear-gradient(#ffdf62,#f13024,#ffb62e,#57d7d7,#ffdf62);background-size:100% 300%;box-shadow:inset 0 0 5px #fff,0 0 11px #f0292b,0 0 24px #ff9b22;animation:bubble 4s linear infinite}.jukebox:before{left:12px}.jukebox:after{right:12px;animation-direction:reverse}
+.arch{position:relative;overflow:hidden;min-height:790px;padding:38px 50px 30px;border:5px solid #d8c8a4;border-radius:48% 48% 28px 28px/25% 25% 28px 28px;background:radial-gradient(ellipse at 50% 16%,rgba(255,185,45,.28),transparent 28%),linear-gradient(#27110d,#090909 42%,#160e0b);box-shadow:inset 0 0 55px #000,0 0 0 5px #6e2315,0 0 0 8px #d0a353}.arch:before{content:"";position:absolute;inset:13px;border:5px double #bb842f;border-radius:48% 48% 18px 18px/24% 24% 18px 18px;box-shadow:inset 0 0 18px #b20e20,0 0 14px #bd1224;pointer-events:none}.arch:after{content:"";position:absolute;left:50%;bottom:15px;width:74%;height:96px;transform:translateX(-50%);border:3px solid #a87934;border-radius:50% 50% 10px 10px/35% 35% 10px 10px;background:repeating-linear-gradient(90deg,#24110c 0 7px,#a47234 7px 9px,#120b09 9px 15px);box-shadow:inset 0 0 28px #000}
+.content{position:relative;z-index:3}.brand{text-align:center;margin:0 auto 14px;color:#f0c66e;font:700 .68rem Cinzel,serif;letter-spacing:.26em}.record-window{height:215px;display:grid;place-items:center;position:relative;margin-bottom:5px;border:2px solid #9d7135;border-radius:50% 50% 12px 12px/60% 60% 12px 12px;background:radial-gradient(circle,#34130f,#090909 66%);box-shadow:inset 0 0 35px #000,0 0 16px rgba(255,171,33,.25)}.record{position:relative;width:158px;height:158px;border-radius:50%;background:repeating-radial-gradient(circle,transparent 0 4px,rgba(255,255,255,.09) 5px,transparent 6px 9px),conic-gradient(#030303,#343434,#050505,#272727,#030303);border:3px solid #111;box-shadow:0 0 0 4px #777066,0 10px 22px #000}.record.spin{animation:spin 1.45s linear infinite}.label{position:absolute;inset:50px;display:grid;place-items:center;border-radius:50%;color:#160c08;background:radial-gradient(circle,#171717 0 5px,#d3a143 6px);font:800 9px Cinzel,serif;text-align:center;line-height:1}.arm{position:absolute;top:52px;left:calc(50% + 47px);width:98px;height:12px;transform:rotate(42deg);transform-origin:left;border-radius:9px;background:linear-gradient(#fff7dd,#79736c 50%,#201d1b);box-shadow:0 3px 5px #000}.arm:before{content:"";position:absolute;left:-11px;top:-7px;width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7e4,#766f67 56%,#191715)}.arm:after{content:"";position:absolute;right:-7px;top:-5px;width:21px;height:21px;border-radius:4px;background:#a50e1c;border:1px solid #deb063}
+.machine-title{text-align:center;margin:10px 0 3px;color:#d9ae62;font:400 clamp(2.25rem,8vw,4rem)/.85 "Metal Mania",Cinzel,serif;text-shadow:0 2px #3b2109,0 0 8px #e4ae55,0 0 22px #a30b1b}.sub{text-align:center;margin:8px 0 16px;color:#d7c2a2;font:700 .72rem Cinzel,serif;letter-spacing:.22em}.selector{padding:15px;border:2px solid #b18445;background:linear-gradient(#d8cdb5,#665f56 8%,#171514 13%,#080808 88%,#696158 94%,#e0d5bd);box-shadow:0 8px 20px #000}.display{height:72px;display:flex;align-items:center;justify-content:center;gap:15px;margin-bottom:13px;border:2px solid #947038;background:#020302;box-shadow:inset 0 0 22px #000,0 0 12px rgba(189,18,36,.45)}.slot{width:48px;height:52px;display:grid;place-items:center;border:1px solid #c08d3d;background:#060604;color:#ffc84d;font:700 34px "Courier New",monospace;text-shadow:0 0 9px #ff9c1d}.display.success .slot{color:var(--green);border-color:var(--green);text-shadow:0 0 10px var(--green)}.display.error{animation:shake .38s}.display.error .slot{color:#ff3348;border-color:#ff3348}.message{min-height:42px;display:grid;place-items:center;text-align:center;color:#ddcfb7;font-size:.82rem}.keypad{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.key{aspect-ratio:1;border:2px solid #d5c8ae;border-radius:50%;color:#1b1109;background:radial-gradient(circle at 34% 25%,#fff0bd,#d18b27 57%,#663810 100%);font:800 1.08rem Cinzel,serif;cursor:pointer;box-shadow:0 5px 0 #2b1407,0 8px 12px #000,inset 0 3px 5px #fff7d2;transition:.12s}.key:hover{filter:brightness(1.15);box-shadow:0 5px 0 #2b1407,0 8px 12px #000,0 0 16px #bd1224}.key:active{transform:translateY(4px);box-shadow:0 1px #2b1407}.clear{width:100%;margin-top:14px;padding:12px;border:1px solid #d8bd84;color:#f4e7cd;background:linear-gradient(#65121b,#26090c);font:700 .78rem Cinzel,serif;letter-spacing:.15em;cursor:pointer}.player-box{display:none;margin-top:15px;padding:11px;border:1px solid #ae7b36;background:#080808}.player-box.visible{display:block}audio{display:block;width:100%}
+.next-hint{display:none;margin-top:30px;padding:27px;border:1px solid #a77934;background:linear-gradient(145deg,rgba(36,15,17,.97),rgba(8,8,10,.98));box-shadow:0 0 0 4px #080708,0 0 0 5px rgba(213,170,89,.22),0 18px 50px #000;opacity:0;transform:translateY(22px)}.next-hint.visible{display:block;animation:reveal 1s ease forwards}.next-hint h2{margin:0 0 18px;text-align:center;color:#deb66c;font:700 clamp(1.25rem,4vw,1.8rem) Cinzel,serif;text-shadow:0 0 12px #a40c1c}.next-hint p,.next-hint li{line-height:1.55}.next-path{text-align:center;color:#eece89}.memory-note{display:block;margin-top:7px;color:#f15a65;font-size:.86rem;font-style:italic}.shield{display:inline-grid;place-items:center;width:24px;height:27px;margin-left:4px;color:#fff;font-style:normal;font-weight:800;background:linear-gradient(#c91425,#650711);border:1px solid #f2c2c6;clip-path:polygon(50% 0,100% 18%,100% 72%,50% 100%,0 72%,0 18%);filter:drop-shadow(0 0 5px #e02233)}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes bubble{to{background-position:0 100%}}@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}@keyframes reveal{to{opacity:1;transform:none}}
+@media(max-width:560px){body{padding:12px 0 45px}.page{width:100%}.cache-title{padding:0 12px}.jukebox{padding:14px 13px 19px;border-left-width:2px;border-right-width:2px}.jukebox:before,.jukebox:after{width:12px;top:78px}.jukebox:before{left:7px}.jukebox:after{right:7px}.arch{min-height:720px;padding:31px 33px 28px}.record-window{height:178px}.record{width:128px;height:128px}.label{inset:40px}.arm{top:43px;left:calc(50% + 38px);width:78px}.keypad{gap:7px}.key{font-size:.92rem}.next-hint{margin:24px 12px 0;padding:21px 18px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <main class="page">
-  <div class="jukebox">
-    <section class="inner">
-      <div class="neon" aria-hidden="true"></div>
-      <div class="content">
-        <div class="record-area" aria-hidden="true">
-          <div class="record" id="record"><div class="label">ROCK<br>--</div></div><div class="arm"></div>
-        </div>
-        <h1>Headbangers<br>Rock'n Roll</h1>
-        <p class="headbanger">MusicBox</p>
-        <div class="display" id="display"><div class="slot" id="slot0">&nbsp;</div><div class="slot" id="slot1">&nbsp;</div></div>
-        <div class="message" id="message" aria-live="polite">Wähle deine Nummer</div>
-        <div class="keypad" id="keypad"></div>
-        <button class="clear" id="clearBtn" type="button">LÖSCHEN</button>
-        <div class="player-box" id="playerBox">
-          <audio id="audioPlayer" controls preload="metadata">
-            <source src="motorhead.mp3" type="audio/mpeg">
-            Dein Browser kann diese MP3-Datei nicht abspielen.
-          </audio>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <section class="next-hint" id="nextHint" aria-live="polite" aria-hidden="true">
-  <h2>🤘 Headbanger geht in Rente. Der Rock bleibt.</h2>
-  <p>Der erste Schlüssel hat die Jukebox geöffnet.</p>
-  <p>Der zweite steckt im Song.</p>
-  <ul>
-    <li>Wer spielt ihn?</li>
-
-    <li>
-      Von welchem Album stammt er? (das wievielte?)
-      <br>
-      <span class="memory-note">
-        merke dir <span class="shield">F</span>
-      </span>
-    </li>
-
-    <li>
-      Welche Nummer trägt der Titel auf diesem Album?
-      <br>
-      <span class="memory-note">
-        merke dir <span class="shield">G</span>
-      </span>
-    </li>
-  </ul>
-  <p class="next-path"><strong>Diese Nummer öffnet den nächsten Weg.</strong></p>
-</section>
+<header class="cache-title"><small>HEADBANGERS ROCK 'N' RENTE</small><h1>Die MusicBox</h1></header>
+<div class="jukebox"><section class="arch"><div class="content"><div class="brand">GCBY17R</div><div class="record-window" aria-hidden="true"><div class="record" id="record"><div class="label">HEAD<br>BANGER</div></div><div class="arm"></div></div><h1 class="machine-title">Headbangers<br>Rock 'n' Roll</h1><p class="sub">MUSICBOX</p><div class="selector"><div class="display" id="display"><div class="slot" id="slot0">&nbsp;</div><div class="slot" id="slot1">&nbsp;</div></div><div class="message" id="message" aria-live="polite">Wähle deine Nummer</div><div class="keypad" id="keypad"></div><button class="clear" id="clearBtn" type="button">AUSWAHL LÖSCHEN</button><div class="player-box" id="playerBox"><audio id="audioPlayer" controls preload="metadata"><source src="motorhead.mp3" type="audio/mpeg">Dein Browser kann diese MP3-Datei nicht abspielen.</audio></div></div></div></section></div>
+<section class="next-hint" id="nextHint" aria-live="polite" aria-hidden="true"><h2>🤘 Headbanger geht in Rente. Der Rock bleibt.</h2><p>Der erste Schlüssel hat die Jukebox geöffnet.</p><p>Der zweite steckt im Song.</p><ul><li>Wer spielt ihn?</li><li>Von welchem Album stammt er? (das wievielte?)<span class="memory-note">Merke dir <span class="shield">F</span></span></li><li>Welche Nummer trägt der Titel auf diesem Album?<span class="memory-note">Merke dir <span class="shield">G</span></span></li></ul><p class="next-path"><strong>Diese Nummer öffnet den nächsten Weg.</strong></p></section>
 </main>
 <script>
 "use strict";
-const CORRECT_CODE="49", HINT_DELAY_MS=12000;
-let entered="", resetTimer=null, hintTimer=null, audioContext=null;
+const CORRECT_CODE="49",HINT_DELAY_MS=12000;let entered="",resetTimer=null,hintTimer=null,audioContext=null;
 const display=document.getElementById("display"),slot0=document.getElementById("slot0"),slot1=document.getElementById("slot1"),message=document.getElementById("message"),keypad=document.getElementById("keypad"),clearBtn=document.getElementById("clearBtn"),record=document.getElementById("record"),playerBox=document.getElementById("playerBox"),audioPlayer=document.getElementById("audioPlayer"),nextHint=document.getElementById("nextHint");
-for(let n=0;n<=9;n++){const b=document.createElement("button");b.className="key";b.type="button";b.textContent=n;b.addEventListener("click",()=>pressDigit(String(n)));keypad.appendChild(b)}
-function updateSlots(){slot0.textContent=entered[0]||"\u00A0";slot1.textContent=entered[1]||"\u00A0"}
+for(let n=0;n<=9;n++){const b=document.createElement("button");b.className="key";b.type="button";b.textContent=n;b.setAttribute("aria-label","Ziffer "+n);b.addEventListener("click",()=>pressDigit(String(n)));keypad.appendChild(b)}
+function updateSlots(){slot0.textContent=entered[0]||"\u00a0";slot1.textContent=entered[1]||"\u00a0"}
 function pressDigit(d){if(entered.length>=2)return;display.classList.remove("error","success");entered+=d;updateSlots();if(entered.length===2)checkCode()}
 function checkCode(){if(entered===CORRECT_CODE){display.classList.add("success");message.textContent="Treffer! Drücke auf Play, falls der Song nicht automatisch startet.";playerBox.classList.add("visible");audioPlayer.currentTime=0;audioPlayer.play().catch(()=>{});return}display.classList.add("error");message.textContent="Falsche Nummer";beep();clearTimeout(resetTimer);resetTimer=setTimeout(resetSelection,900)}
 function resetSelection(){entered="";display.classList.remove("error","success");updateSlots();message.textContent="Wähle deine Nummer"}
