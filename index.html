@@ -16,7 +16,7 @@ body{margin:0;padding:24px;display:flex;justify-content:center;background:radial
 .neon{position:absolute;pointer-events:none;inset:15px;border:8px solid var(--red);border-bottom-color:var(--orange);border-radius:205px 205px 16px 16px/165px 165px 16px 16px;box-shadow:0 0 5px white,0 0 14px var(--red),0 0 30px var(--red),inset 0 0 14px var(--red);animation:pulse 2s ease-in-out infinite alternate}
 .content{position:relative;z-index:2}.record-area{height:170px;display:grid;place-items:center;position:relative}.record{position:relative;width:148px;height:148px;border-radius:50%;background:repeating-radial-gradient(circle,transparent 0 4px,#ffffff16 5px,transparent 6px 9px),conic-gradient(#050505,#373737,#050505,#222,#050505);border:3px solid #171717;box-shadow:0 0 0 4px #777,0 8px 20px #000}.record.spin{animation:spin 1.45s linear infinite}.label{position:absolute;inset:48px;display:grid;place-items:center;border-radius:50%;color:#171717;background:radial-gradient(circle,#171717 0 5px,var(--yellow) 6px);font-size:10px;font-weight:900;text-align:center;line-height:1}
 .arm{position:absolute;top:36px;left:calc(50% + 44px);width:90px;height:12px;transform:rotate(43deg);transform-origin:left;border-radius:9px;background:linear-gradient(#fff,#676c70 55%,#222);box-shadow:0 2px 4px #000}.arm:before{content:"";position:absolute;left:-10px;top:-7px;width:25px;height:25px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#777 55%,#222)}.arm:after{content:"";position:absolute;right:-6px;top:-4px;width:20px;height:20px;border-radius:3px 8px 8px 3px;background:var(--red)}
-h1{margin:2px 0 10px;text-align:center;text-transform:uppercase;font-family:Impact,"Arial Narrow Bold",sans-serif;font-size:clamp(30px,7vw,46px);line-height:.95;letter-spacing:2px;color:var(--yellow);text-shadow:0 0 3px white,0 0 9px var(--orange),0 0 21px var(--red),3px 4px #6e0808,6px 7px #050505}.christian{text-align:center;margin:0 0 15px;color:var(--cyan);font-weight:bold;letter-spacing:3px;text-transform:uppercase;text-shadow:0 0 7px var(--cyan),0 0 17px var(--cyan)}
+h1{margin:2px 0 10px;text-align:center;text-transform:uppercase;font-family:Impact,"Arial Narrow Bold",sans-serif;font-size:clamp(30px,7vw,46px);line-height:.95;letter-spacing:2px;color:var(--yellow);text-shadow:0 0 3px white,0 0 9px var(--orange),0 0 21px var(--red),3px 4px #6e0808,6px 7px #050505}.headbanger{text-align:center;margin:0 0 15px;color:var(--cyan);font-weight:bold;letter-spacing:3px;text-transform:uppercase;text-shadow:0 0 7px var(--cyan),0 0 17px var(--cyan)}
 .display{height:72px;display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:10px;border:4px solid #e8edf0;border-radius:12px;background:#020505;box-shadow:inset 0 0 20px #000,0 0 17px #20e7e766}.slot{width:44px;height:51px;display:grid;place-items:center;border:1px solid var(--cyan);border-radius:5px;background:#000;color:var(--cyan);font:700 34px "Courier New";text-shadow:0 0 8px var(--cyan),0 0 18px var(--cyan)}.display.success .slot{color:var(--green);border-color:var(--green);text-shadow:0 0 10px var(--green)}.display.error{animation:shake .38s}.display.error .slot{color:var(--red);border-color:var(--red)}
 .message{min-height:40px;display:grid;place-items:center;text-align:center;font-size:14px;letter-spacing:1px}.keypad{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.key{aspect-ratio:1;border:2px solid #ffffffaa;border-radius:50%;color:#151515;font:900 20px inherit;cursor:pointer;box-shadow:0 5px 0 #0009,0 7px 12px #000,inset 0 3px 4px #ffffffbb}.key:nth-child(5n+1){background:radial-gradient(circle at 35% 28%,#ffad91,var(--red) 66%)}.key:nth-child(5n+2){background:radial-gradient(circle at 35% 28%,#ffd09b,var(--orange) 66%)}.key:nth-child(5n+3){background:radial-gradient(circle at 35% 28%,#fff3ad,var(--yellow) 66%)}.key:nth-child(5n+4){background:radial-gradient(circle at 35% 28%,#b0ffff,var(--cyan) 66%)}.key:nth-child(5n+5){background:radial-gradient(circle at 35% 28%,#ffb0d8,var(--pink) 66%)}.key:active{transform:translateY(4px);box-shadow:0 1px #000}
 .clear{width:100%;margin-top:16px;padding:12px;border:2px solid #dfe5e9;border-radius:9px;color:var(--cream);background:linear-gradient(#414141,#0c0c0c);font:800 14px inherit;letter-spacing:2px;cursor:pointer}.player-box{display:none;margin-top:16px;padding:12px;border:3px solid #dce2e6;border-radius:12px;background:#090909;box-shadow:0 0 18px #ff45ad66}.player-box.visible{display:block}audio{display:block;width:100%}
@@ -32,10 +32,10 @@ h1{margin:2px 0 10px;text-align:center;text-transform:uppercase;font-family:Impa
       <div class="neon" aria-hidden="true"></div>
       <div class="content">
         <div class="record-area" aria-hidden="true">
-          <div class="record" id="record"><div class="label">ROCK<br>49</div></div><div class="arm"></div>
+          <div class="record" id="record"><div class="label">ROCK<br>--</div></div><div class="arm"></div>
         </div>
         <h1>Headbangers<br>Rock'n Roll</h1>
-        <p class="christian">Für Christian</p>
+        <p class="headbanger">Für Headbanger</p>
         <div class="display" id="display"><div class="slot" id="slot0">&nbsp;</div><div class="slot" id="slot1">&nbsp;</div></div>
         <div class="message" id="message" aria-live="polite">Wähle deine Nummer</div>
         <div class="keypad" id="keypad"></div>
@@ -51,7 +51,7 @@ h1{margin:2px 0 10px;text-align:center;text-transform:uppercase;font-family:Impa
   </div>
 
   <section class="next-hint" id="nextHint" aria-live="polite" aria-hidden="true">
-    <h2>🤘 Christian geht in Rente. Der Rock bleibt.</h2>
+    <h2>🤘 Headbanger geht in Rente. Der Rock bleibt.</h2>
     <p>Der erste Schlüssel hat die Jukebox geöffnet.</p>
     <p>Der zweite steckt im Song.</p>
     <ul>
