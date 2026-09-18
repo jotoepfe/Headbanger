@@ -21,6 +21,39 @@ h1{margin:2px 0 10px;text-align:center;text-transform:uppercase;font-family:Impa
 .message{min-height:40px;display:grid;place-items:center;text-align:center;font-size:14px;letter-spacing:1px}.keypad{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.key{aspect-ratio:1;border:2px solid #ffffffaa;border-radius:50%;color:#151515;font:900 20px inherit;cursor:pointer;box-shadow:0 5px 0 #0009,0 7px 12px #000,inset 0 3px 4px #ffffffbb}.key:nth-child(5n+1){background:radial-gradient(circle at 35% 28%,#ffad91,var(--red) 66%)}.key:nth-child(5n+2){background:radial-gradient(circle at 35% 28%,#ffd09b,var(--orange) 66%)}.key:nth-child(5n+3){background:radial-gradient(circle at 35% 28%,#fff3ad,var(--yellow) 66%)}.key:nth-child(5n+4){background:radial-gradient(circle at 35% 28%,#b0ffff,var(--cyan) 66%)}.key:nth-child(5n+5){background:radial-gradient(circle at 35% 28%,#ffb0d8,var(--pink) 66%)}.key:active{transform:translateY(4px);box-shadow:0 1px #000}
 .clear{width:100%;margin-top:16px;padding:12px;border:2px solid #dfe5e9;border-radius:9px;color:var(--cream);background:linear-gradient(#414141,#0c0c0c);font:800 14px inherit;letter-spacing:2px;cursor:pointer}.player-box{display:none;margin-top:16px;padding:12px;border:3px solid #dce2e6;border-radius:12px;background:#090909;box-shadow:0 0 18px #ff45ad66}.player-box.visible{display:block}audio{display:block;width:100%}
 .next-hint{display:none;margin-top:25px;padding:25px 28px;border:3px solid var(--cyan);border-radius:18px;background:linear-gradient(135deg,#ff45ad1f,#20e7e71c),#050505f5;box-shadow:0 0 8px #ffffff70,0 0 23px #20e7e788,0 0 40px #ff45ad44,inset 0 0 22px #000;opacity:0;transform:translateY(22px)}.next-hint.visible{display:block;animation:reveal 1.1s ease forwards}.next-hint h2{margin:0 0 18px;text-align:center;color:var(--yellow);font-size:clamp(21px,5vw,29px);text-shadow:0 0 6px var(--orange),0 0 15px var(--red)}.next-hint p{margin:9px 0;font-size:16px;line-height:1.5}.next-hint ul{margin:15px 0 18px;padding-left:26px}.next-hint li{margin:9px 0;line-height:1.4}.next-path{text-align:center;color:var(--cyan);text-shadow:0 0 7px var(--cyan)}
+.memory-note{
+  display:block;
+  margin-top:6px;
+  font-size:14px;
+  font-style:italic;
+  font-weight:300;
+  color:#ff4a4a;
+}
+
+.shield{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:22px;
+  height:24px;
+  margin-left:4px;
+  color:#fff;
+  font-style:normal;
+  font-weight:700;
+  font-size:13px;
+  background:linear-gradient(#c90000,#7a0000);
+  border:1px solid #ffd0d0;
+  clip-path:polygon(
+    50% 0%,
+    100% 18%,
+    100% 72%,
+    50% 100%,
+    0% 72%,
+    0% 18%
+  );
+  box-shadow:0 0 6px #ff4444;
+}
+  
 @keyframes spin{to{transform:rotate(360deg)}}@keyframes tube{to{background-position:0 100%}}@keyframes pulse{to{filter:brightness(1.3)}}@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}@keyframes reveal{to{opacity:1;transform:translateY(0)}}
 @media(max-width:520px){body{padding:12px}.jukebox{padding:17px}.inner{min-height:640px;padding:28px 31px 23px}.record-area{height:145px}.record{width:125px;height:125px}.label{inset:40px}.arm{top:30px;left:calc(50% + 37px);width:76px}.keypad{gap:7px}}
 </style>
@@ -51,16 +84,30 @@ h1{margin:2px 0 10px;text-align:center;text-transform:uppercase;font-family:Impa
   </div>
 
   <section class="next-hint" id="nextHint" aria-live="polite" aria-hidden="true">
-    <h2>🤘 Headbanger geht in Rente. Der Rock bleibt.</h2>
-    <p>Der erste Schlüssel hat die Jukebox geöffnet.</p>
-    <p>Der zweite steckt im Song.</p>
-    <ul>
-      <li>Wer spielt ihn?</li>
-      <li>Von welchem Album stammt er? (das wievielte?)</li>
-      <li>Welche Nummer trägt der Titel auf diesem Album?</li>
-    </ul>
-    <p class="next-path"><strong>Diese Nummer öffnet den nächsten Weg.</strong></p>
-  </section>
+  <h2>🤘 Headbanger geht in Rente. Der Rock bleibt.</h2>
+  <p>Der erste Schlüssel hat die Jukebox geöffnet.</p>
+  <p>Der zweite steckt im Song.</p>
+  <ul>
+    <li>Wer spielt ihn?</li>
+
+    <li>
+      Von welchem Album stammt er? (das wievielte?)
+      <br>
+      <span class="memory-note">
+        merke dir <span class="shield">F</span>
+      </span>
+    </li>
+
+    <li>
+      Welche Nummer trägt der Titel auf diesem Album?
+      <br>
+      <span class="memory-note">
+        merke dir <span class="shield">G</span>
+      </span>
+    </li>
+  </ul>
+  <p class="next-path"><strong>Diese Nummer öffnet den nächsten Weg.</strong></p>
+</section>
 </main>
 <script>
 "use strict";
