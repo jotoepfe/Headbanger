@@ -17,7 +17,7 @@ Benutzerführung im Heavy-Metal-Stil.
 
 --- Einstieg ---
 Die Spieler starten über die Cache-Seite:
-Startseite: https://jotoepfe.github.io/Headbanger/Headbangers_Cache.html
+Startseite: https://sprockyland.github.io/Headbanger/Headbangers_Cache.html
 
 Dort werden Story, Hinweise, Stationen und weitere cachebezogene Inhalte
 bereitgestellt.
@@ -25,7 +25,7 @@ bereitgestellt.
 --- Final ---
 Am Final befindet sich ein Aufkleber mit QR-Code. Der QR-Code verweist auf das
 digitale Abschlussdiplom:
-Headbanger-Diplom: https://jotoepfe.github.io/Headbanger/hd-diplom.html
+Headbanger-Diplom: https://sprockyland.github.io/Headbanger/hd-diplom.html
 
 Nach erfolgreichem Abschluss des Caches erhalten die Finder damit eine
 zusätzliche digitale Belohnung.
