@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded',function(){
     try{
       await database.ref('eintraege').push({name:name,message:message,timestamp:firebase.database.ServerValue.TIMESTAMP});
       if(typeof emailjs!=='undefined'){
-        emailjs.send('service_pb2v75a','template_mn1nu3o',{to_email:'j.toepfer@gmx.de',cacher_name:name,cacher_message:message,site_link:'https://jotoepfe.github.io/Headbanger/hd-diplom.html'}).catch(function(err){console.warn('E-Mail-Benachrichtigung fehlgeschlagen:',err);});
+        emailjs.send('service_pb2v75a','template_mn1nu3o',{to_email:'j.toepfer@gmx.de',cacher_name:name,cacher_message:message,site_link:'https://sprockyland.github.io/Headbanger/hd-diplom.html'}).catch(function(err){console.warn('E-Mail-Benachrichtigung fehlgeschlagen:',err);});
       }
       document.getElementById('username').value='';document.getElementById('message').value='';say('Dein Gruß ist im Logbuch. Rock on! 🤘','ok');
     }catch(e){say('Der Eintrag konnte nicht gespeichert werden. Bitte versuche es erneut.','error');console.error(e);}finally{button.disabled=false;}
