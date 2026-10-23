@@ -52,10 +52,10 @@ Die Seiten werden über GitHub Pages bereitgestellt.
 
 Öffentliche URLs:
   * Startseite:
-    https://jotoepfe.github.io/Headbanger/Headbangers_Cache.html
+    https://sprockyland.github.io/Headbanger/Headbangers_Cache.html
 
   * Final-Diplom:
-    https://jotoepfe.github.io/Headbanger/hd-diplom.html
+    https://sprockyland.github.io/Headbanger/hd-diplom.html
 
 Geocaching-Listing:
   * Listing GCBY17R auf Geocaching.com:
